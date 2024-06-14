@@ -24,6 +24,8 @@ void SimpleSocket::test_connection(int fd)
 	}
 }
 
+// Get functions
+
 struct sockaddr_in SimpleSocket::get_address(){
 	return _address;
 }
