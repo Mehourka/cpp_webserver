@@ -13,7 +13,7 @@ TEST_OBJS = $(TEST_SRCS:$(TEST_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 OBJ_DIR=obj
 OBJS=$(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-INCLUDE= -I include
+INCLUDE= -I include -I $(SRC_DIR)
 all: $(NAME)
 
 run: all
@@ -26,7 +26,7 @@ $(NAME): $(OBJS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(@D) 
-	@$(CC) $(CFLAGS) $(INCLUDE) -MMD -MP -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDE) -MMD -MP -c $< -o $@
 
 -include:$(DEPS)
 

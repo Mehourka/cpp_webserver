@@ -1,8 +1,25 @@
+#include "Common.hpp"
+#include "Parser.hpp"
+
 #include <iostream>
+#include <sstream>
+#include <vector>
+#include <string>
 
 int ft_sum(int, int);
 
 int main(void) {
-	const int result = ft_sum(40, 2);
-	std::cout << "The result is : " << result << std::endl;
+  std::string text = "Hello, World! LAST_TOKEN\n\
+Line two \n\
+Line Three";
+  std::stringstream ss(text);
+  std::string line;
+  
+  /* while(std::getline(ss,  line)) */
+  /* { */
+  /*   std::cout << " - " << line <<std::endl; */
+  /* } */
+
+  std::getline(ss, line);
 }
+

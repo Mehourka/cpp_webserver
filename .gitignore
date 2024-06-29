@@ -1,0 +1,11 @@
+*
+!srcs/
+!srcs/**
+
+!include/
+!include/**
+
+!*.cpp
+!*.hpp
+
+!Makefile
