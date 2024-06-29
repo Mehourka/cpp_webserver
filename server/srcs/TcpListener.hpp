@@ -9,8 +9,6 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 
-	#pragma comment (lib," ")
-
 class TcpListener
 {
 	public:

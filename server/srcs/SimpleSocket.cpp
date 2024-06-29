@@ -11,7 +11,7 @@ SimpleSocket::SimpleSocket(int domain, int type, int protocol, int port, u_long 
 	test_connection(_sock);
 
 	// Establish Connection
-	_connection = connect_to_network(_sock, _address);
+	// _connection = connect_to_network(_sock, _address);
 	test_connection(_connection);
 }
 

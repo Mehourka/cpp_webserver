@@ -13,7 +13,6 @@ int TcpListener::init()
 		exit(EXIT_FAILURE);
 	}
 
-
 	// Bind ip addres s an port to a socket
 	struct sockaddr_in address;
 	address.sin_family = AF_INET;
@@ -37,9 +36,23 @@ int TcpListener::init()
 	FD_ZERO(&m_master);
 
 	FD_SET(m_socket, &m_master);
+	return 0;
 }
 
 int TcpListener::run()
 {
+	// bool running = true;
 
+	// while (running)
+	// {
+	// 	fd_set copy = m_master;
+
+	// 	int socketCount = select(0, &copy, nullptr, nullptr, nullptr);
+
+	// 	for (int i = 0; i < socketCount; i++)
+	// 	{
+	// 		SOCKET sock = copy.fd_array[i];∫ 
+	// 	}
+	// }
+	return 0;
 }
