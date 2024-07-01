@@ -25,4 +25,8 @@
 #define LogInfoC(x, COLOR) std::cout << COLOR << (x) << WHITE << std::endl
 #define LogErr(x) std::cerr << RED << (x) << WHITE << std::endl
 
+#define UNUSED(x) (void)(x)
+
+
 using std::string;
+

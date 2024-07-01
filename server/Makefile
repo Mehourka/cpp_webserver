@@ -1,6 +1,5 @@
 CC	= c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic-errors
-
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic-errors 
 INCLUDE=-Iinclude
 
 NAME := $(notdir $(shell pwd))
@@ -16,7 +15,7 @@ PURPLE	:= "\033[0;35m"
 CYAN	:= $(PRUPLE)
 RESET	:= "\033[00m"
 
-all: $(NAME)
+all: run
 
 echo:
 	@echo $(SRCS)

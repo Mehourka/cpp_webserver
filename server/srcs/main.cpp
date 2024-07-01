@@ -1,19 +1,13 @@
 #include "Common.hpp"
-#include <sys/socket.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <arpa/inet.h>
 
-#include "TcpListener.hpp"
-
-using namespace std;
-
-#define PORT 1234
+// #include "TcpListener.hpp"
+#include "MultiClientChat.hpp"
 
 int main(void)
 {
-	std::cout << "[SERVER] ";
-	test_make();
+	MultiClientChat mcc("0.0.0.0", 4242);
+	if(mcc.init() != 0)
+		return 1;
+
+	mcc.run();
 }
