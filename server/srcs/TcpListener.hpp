@@ -42,6 +42,7 @@ class TcpListener
 		const char*		m_ipAddress;
 		int				m_port;
 		int				m_socket;
+		fd_set			m_master;
 		struct pollfd	m_fds[200];		//Master file descriptor set
 		int				m_nfds;
 		

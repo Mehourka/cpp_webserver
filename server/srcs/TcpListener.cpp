@@ -45,7 +45,7 @@ int TcpListener::init()
 	memset(m_fds, 0, sizeof(m_fds));
 	m_fds[0].fd = m_socket;
 	m_fds[0].events = POLLIN;
-	m_timeout = (3 * 60 * 1000);
+	// m_timeout = (3 * 60 * 1000);
 	
 	LogInfo("[TcpListener] Initialized ...");
 	return 0;
@@ -59,7 +59,7 @@ int TcpListener::run()
 
 	while (running)
 	{
-		Log('Waiting on poll() ...');
+		Log("Waiting on poll() ...");
 
 		rc = poll(m_fds, m_nfds, timeout);
 
@@ -71,6 +71,8 @@ int TcpListener::run()
 			//https://www.ibm.com/docs/en/i/7.4?topic=designs-using-poll-instead-select
 		}
 
+
+		fd_set ready_sockets;
 		// Get number of available sockets
 		select(FD_SETSIZE, &ready_sockets, nullptr, nullptr, nullptr);
 		for (int i = 0; i < FD_SETSIZE; i++)

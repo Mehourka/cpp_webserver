@@ -2,12 +2,19 @@
 
 // #include "TcpListener.hpp"
 #include "MultiClientChat.hpp"
+#include "HttpRequest.hpp"
+
+void test_http_request()
+{
+	std::string str = "GET /index.php HTTP/1.1";
+	
+	HttpRequest req(str);
+
+}
 
 int main(void)
 {
-	MultiClientChat mcc("0.0.0.0", 4242);
-	if(mcc.init() != 0)
-		return 1;
 
-	mcc.run();
+	test_http_request();
+
 }
