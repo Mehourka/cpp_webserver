@@ -72,8 +72,8 @@ int TcpListener::run()
 		}
 
 
-		fd_set ready_sockets;
 		// Get number of available sockets
+		fd_set ready_sockets;
 		select(FD_SETSIZE, &ready_sockets, nullptr, nullptr, nullptr);
 		for (int i = 0; i < FD_SETSIZE; i++)
 		{
